@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>タイピングアドベンチャー</title>
+    <link rel="stylesheet" href="タイトル画面/styles.css">
+    <script src="タイトル画面/script.js" defer></script>
+</head>
+<body>
+    <div class="image-container">
+        <img src="タイトル画面/img/タイトル.jpg" alt="タイトル背景" class="background-image">
+        <h1>タイピングアドベンチャー</h1>
+        
+        <!-- スタートボタン -->
+        <button id="start-button">スタート</button>
+    </div>
+
+    <!-- 自動再生用のaudio要素を追加 (音楽を自動再生、ループ再生) -->
+    <audio id="background-audio" src="タイトル画面/img/music.mp3" loop>
+        お使いのブラウザはaudioタグに対応していません。
+    </audio>
+
+    <script>
+        // 画面をクリックした際に音楽を再生するイベントリスナー
+        document.addEventListener('click', function() {
+            const audio = document.getElementById('background-audio');
+            
+            // 音楽が再生されていない場合、再生を開始
+            if (audio.paused) {
+                audio.play();
+            }
+        });
+
+    </script>
+</body>
+</html>
+
